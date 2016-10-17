@@ -1,0 +1,47 @@
+%!TEX root = diplom.tex
+%\pagestyle{plain}
+\chapter*{Обзор существующих инструментов}
+\setcounter{chapter}{1}
+\addcontentsline{toc}{chapter}{Обзор существующих инструментов}%
+
+\section{Izitru}
+
+\textbf{URL: } \url{http://www.izitru.com/}
+
+\textbf{Авторы:}
+
+Kevin Connor, a former vice president of product management for Photoshop, and Dr.
+
+Hany Farid, a leading image forensics expert.
+
+\textbf{Что это:} Сайт
+
+\textbf{Стоимость:} Бесплатное
+
+\textbf{Поддерживаемый формат файлов:} JPEG
+
+\textbf{Используемые технологии и алгоритмы:}
+\begin{enumerate}
+  \item \href{http://fotoforensics.com/tutorial-meta.php}{Metadata analysis}
+  \item Device signature analysis
+  \item \emph{Можно так \hyperlink{itm:DCAA}{Double JPEG compression detection analysis} или так \autoref{itm:DCAA} сослаться. Ну обратные ссылки тоже, но только 1 к 1 функция перехода на нужное место в файле.}
+\end{enumerate}
+
+\newpage
+\section{Описание некоторых методов анализа изображений}
+\begin{enumerate}
+  \item JPEG Quantization Tables Analysis:
+Цифровые фотоаппараты, мобильные девайсы и программы для редактирования
+изображений используют различные таблицы квантования при сохранении изображений в
+формат JPEG. Таблицы квантования могут быть извлечены и проанализированы. Если
+таблицы отличаются от тех, которые использует модель фотоаппарата, указанного в EXIF
+данных изображения, значит с изображением проводили какие-либо манипуляции.
+  \label{itm:DCAA}
+  \item \hypertarget{itm:DCAA}{Double Compression Artifacts Analysis:} 
+При повторном сохранении файла формата JPEG происходит повторное сжатие, в
+результате этого коэффициент сжатия увеличивается. При большом коэффициенте
+сжатия появляются артефакты сжатия JPEG, которые представляют собой
+прямоугольные поля одного цвета, которые могут принимать довольно крупный размер в
+одноцветных областях изображения. Данный анализ исследует изображение на
+артефакты сжатия JPEG.
+\end{enumerate}
