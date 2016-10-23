@@ -1,0 +1,597 @@
+%!TEX root = diplom.tex
+%\pagestyle{plain}
+\chapter*{Обзор существующих инструментов}
+\setcounter{chapter}{1}
+\addcontentsline{toc}{chapter}{Обзор существующих инструментов}%
+
+\section{Izitru}
+
+\textbf{URL: } \url{http://www.izitru.com/}
+
+\textbf{Авторы:}
+
+Kevin Connor, a former vice president of product management for Photoshop,
+
+and Dr.Hany Farid, a leading image forensics expert.
+
+\textbf{Что это:} Сайт
+
+\textbf{Стоимость:} Бесплатное
+
+\textbf{Поддерживаемый формат файлов:} JPEG
+
+\textbf{Используемые технологии и алгоритмы:}
+
+\begin{enumerate}
+  \item \href{http://fotoforensics.com/tutorial-meta.php}{Metadata analysis}
+  \item Device signature analysis
+  
+  \label{itm:DCAA}
+  \item \hypertarget{itm:DCAB}{\hyperlink{itm:DCAA}{Double JPEG compression detection analysis}}
+  
+  \item JPEG DCT coefficiets analysis (or Double Quantization Effect analysis)
+  
+  \item Sensor pattern analysis
+  
+  \item JPEG ghosts analysis
+\end{enumerate} 
+
+\textbf{Удобство интерфейса:}
+Ясно как запустить анализ изображения, ясен и результат анализа в целом (программа выводит “диагноз” изображения). Результаты же каждого метода анализа данного инструмента не выводятся.
+
+
+\textbf{Минусы:}
+\begin{enumerate}
+  \item	Не все метаданные анализирует.
+\end{enumerate}
+  
+\textbf{Дополнительные характеристики:}
+\begin{enumerate}
+  \item	Есть IPhone app.
+\end{enumerate}
+
+\textbf{Тестирование на изображениях с модификацией:}
+\begin{enumerate}
+\item \textbf{Оригинальный JPEG с камеры:}
+Подтверждает, что это немодифицированное изображение, полученное с камеры.
+\url{https://www.izitru.com/39jlW}
+\item \textbf{Оригинальный снимок Raw с камеры, пересохраненный в JPEG компьютерной программой:}
+Выводит подозрение,что файл мог быть модифицированным.
+\url{https://www.izitru.com/iymM2}
+\item \textbf{Размытие, растяжение, изменение контраста, клонирование объекта, вставка другого изображения, применение фильтра “аппликация”, добавление блика:}
+Реагирует также, как и на просто пересохранение файла в JPEG в фоторедакторе.
+\end{enumerate}
+
+
+\textbf{Комментарий:}
+Вообще, этот сайт позиционирует себя, как инструмент для доказательства, что фотография не была модифицирована, а не как инструмент для определения модификаций на фотографиях. Он включен в этот список, т.к. многие статьи описывают его, как инструмент для определения модифицировано ли изображение.
+
+
+\newpage
+
+\section{Image edited?}
+
+\textbf{URL: } \url{http://imageedited.com/}
+
+\textbf{Авторы:}
+
+ Неизвестны
+
+\textbf{Что это:} Сайт
+
+\textbf{Стоимость:} Бесплатное, но есть и платная версия
+
+\textbf{Поддерживаемый формат файлов:} JPEG
+
+\textbf{Используемые технологии и алгоритмы:}
+
+\begin{enumerate}
+  \item \href{http://fotoforensics.com/tutorial-meta.php}{Metadata analysis}
+  \item Error Level Analysis (ELA)
+  
+  \item Color Distribution Discontinuities Analysis
+  
+  \item Color Oversaturation Analysis
+  
+  \item Sharpness Grain Analysis
+  
+  \item Light Direction Mismatch analysis
+\end{enumerate} 
+
+\textbf{Удобство интерфейса:}
+Ясно как запустить анализ изображения, ясен и результат анализа в целом (программа выводит “диагноз” изображения). 
+
+\textbf{Минусы:}
+\begin{enumerate}
+  \item	В бесплатной версии отображается только информация о метаданных.
+\end{enumerate}
+
+\textbf{Тестирование на изображениях с модификацией:}
+\begin{enumerate}
+\item \textbf{Оригинальный JPEG с камеры:}
+Подтверждает, что это возможно снимок, полученный с камеры.
+\item \textbf{Оригинальный снимок Raw с камеры, пересохраненный в JPEG компьютерной программой:}
+Если компьютерная программа оставила свои тэги в мета данных, то сайт утверждает, что изображение было модифицировано. Если же не оставила, то выводит сообщение, что пиксели изображения соответствуют фоторедактору.
+
+\item \textbf{Размытие, растяжение, изменение контраста, клонирование объекта, вставка другого изображения, применение фильтра “аппликация”, добавление блика:}
+Реагирует также, как и на просто пересохранение файла в JPEG в фоторедакторе.
+\end{enumerate}
+
+\newpage
+
+\section{Picture manipulation inspector}
+
+\textbf{URL: } \url{http://www.smtdp.com/ru/products/}
+
+\textbf{Авторы:}
+
+Компания «SMTDP»
+
+\textbf{Что это:} Сайт
+
+\textbf{Стоимость:} Бесплатно только 3 фотографии в день.
+
+\textbf{Поддерживаемый формат файлов:} JPEG
+
+\textbf{Используемые технологии и алгоритмы:}
+
+\begin{enumerate}
+  \item \href{http://fotoforensics.com/tutorial-meta.php}{Metadata analysis}
+  \item Quantization Table Analysis
+  
+  \item Double Quantization Effect analysis
+  
+  \item Analysis of response function of the camera 
+  
+  \item Clone Detection Analysis
+  
+  \item Double Compression Artifacts Analysis
+  
+  \item Error Level Analysis (ELA)
+\end{enumerate} 
+
+\textbf{Удобство интерфейса:}
+Ясно как запустить анализ изображения, ясен и результат анализа в целом (программа выводит уровень доверия к изображению).
+
+Инструмент также выводит некоторые результаты анализа в виде картинок без пояснений, которые для людей, не разбирающихся в методах анализа, не понятны.
+  
+\textbf{Дополнительные характеристики:}
+\begin{enumerate}
+  \item	Производительность: 100 изображений в минуту.
+  \item В базе данных есть информация о 3000 моделей фотоаппаратов и мобильных устройств с камерами (Формат мета данных, стандартная таблица квантования для jpg, параметры качества сжатия jpg).
+\end{enumerate}
+
+\textbf{Тестирование на изображениях с модификацией:}
+\begin{enumerate}
+\item \textbf{Оригинальный JPEG с камеры:}
+Выводит ложную информацию о том, что этот снимок открывался программой Photoshop и отображает очень низкий уровень доверия к этой фотографии.
+\url{http://www.smtdp.com/ru/free-demo/?insp=5802ef3a975ab229b34d06cb}
+
+Такой же результат был и с другими оригинальными изображениями с моей камеры.
+\item \textbf{Размытие:}
+Инструмент не выводит сообщений о модификации “размытие” и её области применения. Визуально определить эту модификацию по картинкам, приведенным инструментом, по-моему мнению, возможно.
+\url{http://www.smtdp.com/ru/free-demo/?insp=5803377c975ab229b34d06cd}
+
+\item \textbf{Растяжение:}
+Инструмент не выводит сообщений о модификации “растяжение” и её области применения. Визуально определить эту модификацию по картинкам, приведенным инструментом, по-моему мнению, сложновато.
+\url{http://www.smtdp.com/ru/free-demo/?insp=5803381d975ab229b34d06ce}
+
+\item \textbf{Изменение контраста:}
+Инструмент не выводит сообщений о модификации “изменение контраста” и её области применения. Визуально определить эту модификацию по картинкам, приведенным инструментом, по-моему мнению, сложновато.
+\url{http://www.smtdp.com/ru/free-demo/?insp=5803388a975ab229b34d06cf}
+
+\item \textbf{Клонирование объекта:}
+Инструмент не выводит сообщений о модификации “клонирование объекта” и её области применения. Визуально определить эту модификацию по картинкам, приведенным инструментом, по-моему мнению, сложновато.
+\url{http://www.smtdp.com/free-demo/?insp=580339fb975ab229b34d06d0}
+
+\item \textbf{Вставка другого изображение:}
+Инструмент не выводит сообщений о модификации “вставка другого изображения” и её области применения. Визуально определить эту модификацию по картинкам, приведенным инструментом, по-моему можно.
+\url{http://www.smtdp.com/free-demo/?insp=58033a68975ab229b34d06d1} 
+
+\item \textbf{Применения фильтра "aппликация":}
+Инструмент не выводит сообщений о применении фильтра “аппликация” и его области применения. Визуально определить эту модификацию по картинкам, приведенным инструментом, по-моему нельзя, можно только понять, что все изображение подверглось какой-то модифакации. 
+\url{http://www.smtdp.com/free-demo/?insp=58033acb975ab229b34d06d2}
+\end{enumerate}
+
+\newpage
+
+\section{Image forensic (Ghiro)}
+
+\textbf{URL: } \url{http://www.imageforensic.org/}
+
+\textbf{Авторы:}
+
+Alessandro Tanasi, Marco Buoncristiano
+
+\textbf{Что это:} Сайт
+
+\textbf{Стоимость:} Бесплатное
+
+\textbf{Поддерживаемый формат файлов:}
+\begin{itemize}
+\item Windows bitmap .bmp
+\item Raw Canon .cr2
+\item Raw Canon .crw
+\item Encapsulated PostScript .eps
+\item Graphics Interchange Format .gif
+\item JPEG File Interchange Format .jpg or .jpeg
+\item Raw Minolta .mrw
+\item Raw Olympus .orf
+\item Portable Network Graphics .png
+\item Raw Photoshop .psd
+\item Raw Fujifilm .raf
+\item Raw Panasonic .rw2
+\item Raw TARGA .tga
+\item Tagged Image File Format .tiff
+\end{itemize} 
+
+\textbf{Используемые технологии и алгоритмы:}
+
+\begin{enumerate}
+  \item \href{http://fotoforensics.com/tutorial-meta.php}{Metadata analysis}
+  \item Thumbnail analysis
+  
+  \item Device signature analysis
+  
+  \item Error Level Analysis (ELA)
+\end{enumerate} 
+
+\textbf{Удобство интерфейса:}
+Ясно как запустить анализ изображения, но не ясен результат анализа в целом (программа не выводит никакого конечного “диагноза” изображения).
+Инструмент также выводит некоторые результаты анализа в виде картинок без пояснений, которые для людей, не разбирающихся в методах анализа, не понятны.
+Также неочевидно, что если кликнуть по некоторым полям, то они отобразят дополнительную информацию.
+Инструмент также выводит некоторые результаты анализа в виде картинок без пояснений, которые для людей, не разбирающихся в методах анализа, не понятны.
+  
+\textbf{Дополнительные характеристики:}
+\begin{enumerate}
+  \item Open source.
+  \item Обеспечивает приватность.
+  \item Создатели просят не нагружать сервер большим количеством запросов.
+  \item Подсчитывает разные хэш-суммы для идентификации изображения (CRC32, MD5, SHA1, SHA224, SHA256, SHA384, SHA512)
+\end{enumerate}
+
+\textbf{Тестирование на изображениях с модификацией:}
+\begin{enumerate}
+\item \textbf{Оригинальный JPEG с камеры:}
+
+\url{http://www.imageforensic.org/show/b7e3d482bae3f153335ccfc199167b1a/64bfb135-df57-48c4-90d0-63fa70e0cc0c}
+
+\item \textbf{Оригинальный снимок Raw с камеры, пересохраненный в JPEG компьютерной программой:}
+Если изображение было сохранено в Adobe Photoshop, то можно будет найти мета данные от Adobe Photoshop.
+\url{http://www.imageforensic.org/show/87ee14df942b2ed6565b7a630e56440d/8084079f-c950-40e3-a14d-4dfce6718646}
+Если изображение было сохранено какой-то другой программой, то можно и не найти никаких мета данных в принципе.
+\url{http://www.imageforensic.org/show/5ed0b0e529b98560ecb8419a8f31e296/c5184155-3527-4726-be50-93479c6df7c1}
+
+\item \textbf{Размытие:}
+Инструмент не выводит сообщений о модификации “размытие” и её области применения. Визуально определить эту модификацию по картинкам, приведенным инструментом, по-моему мнению, возможно.
+\url{http://www.imageforensic.org/show/3f24a2bcc6c4ec1e1562c1719743256e/0811a397-1142-4883-b72a-0c8e3428f400}
+
+\item \textbf{Растяжение:}
+Инструмент не выводит сообщений о модификации “растяжение” и её области применения. Визуально определить эту модификацию по картинкам, приведенным инструментом, по-моему мнению, сложновато.
+\url{http://www.imageforensic.org/show/9fd6ef2f0f0a0600d37e6b78e4d1673d/c2c088b6-08a0-4cf9-aeab-23550fa5430d}
+
+\item \textbf{Изменение контраста:}
+Инструмент не выводит сообщений о модификации “изменение контраста” и её области применения. Визуально определить эту модификацию по картинкам, приведенным инструментом, по-моему мнению, сложновато.
+\url{http://www.imageforensic.org/show/90821eee67a902991678f5bf46934a78/c07e563a-522b-45f2-8726-4e389679737e}
+
+\item \textbf{Клонирование объекта:}
+Инструмент не выводит сообщений о модификации “клонирование объекта” и её области применения. Визуально определить эту модификацию по картинкам, приведенным инструментом, по-моему мнению, возможно.
+\url{http://www.imageforensic.org/show/462713f78881339c99c6f8971a1b9125/a85ace1a-334c-429c-a85a-688b3d96daa2}
+
+\item \textbf{Вставка другого изображение:}
+Инструмент не выводит сообщений о модификации “вставка другого изображения” и её области применения. Визуально определить эту модификацию по картинкам, приведенным инструментом, по-моему мнению, возможно.
+\url{http://www.imageforensic.org/show/a704bc9a5abe1adeda4cbba08f4d37d3/7fa91699-758b-4d3c-a99b-ce89ca3c0253}
+
+\item \textbf{Применения фильтра "aппликация":}
+Визуально, по-моему мнению, можно только понять, что все изображение подверглось какой-то модифакации. 
+\url{http://www.imageforensic.org/show/8e4ae85b24b875e9fe5441d80821e8c7/a38d477d-ab00-43d5-be08-b52f28a29e95}
+
+\item \textbf{Добавление блика:}
+Инструмент не выводит сообщений о модификации “Добавление блика ” и её области применения. Визуально определить эту модификацию по картинкам, приведенным инструментом, по-моему сложновато.
+\url{http://www.imageforensic.org/show/851da3b7de64f79fbfbe4b148adf85e7/51a0fbde-9deb-4e79-b4e0-f9ab66b12b65}
+
+\end{enumerate}
+
+\newpage
+
+\section{Image forgery detector}
+
+\textbf{URL: } \url{http://ifdetector.com/}
+
+\textbf{Авторы:}
+
+Scorto Corporation, PhDs in Mathematics, Statistics and Artificial Intelligence
+
+\textbf{Что это:} Сайт
+
+\textbf{Стоимость:} Платное, но есть бесплатная демо-версия, которую по каким-то причинам мне не выслали.
+
+\textbf{Поддерживаемый формат файлов:} Неизвестно
+
+\textbf{Используемые технологии и алгоритмы:}
+
+\begin{enumerate}
+  \item Современные алгоритмы анализа изображения (методы не описаны)
+  \item Алгоритмы машинного обучения (методы не описаны)
+\end{enumerate} 
+
+\textbf{Удобство интерфейса:}
+Судя по скринам, ясно как запустить анализ изображения. Понятен и в целом результат, но как получился такой результат непонятно.
+  
+\newpage
+
+\section{Fotoforensics}
+
+\textbf{URL: } \url{http://fotoforensics.com/}
+
+\textbf{Авторы:}
+
+HackerFactor
+
+\textbf{Что это:} Сайт
+
+\textbf{Стоимость:} Есть платные и бесплатные версии
+
+\textbf{Поддерживаемый формат файлов:} JPEG, PNG
+
+\textbf{Используемые технологии и алгоритмы:}
+
+\begin{enumerate}
+  \item \href{http://fotoforensics.com/tutorial-meta.php}{Metadata analysis}
+  \item Error Level Analysis (ELA)
+    
+  \item Similar Picture Search
+  
+  \item Color Adjustment Analysis
+\end{enumerate} 
+
+\textbf{Дополнительные технологии и алгоритмы в платной версии:}
+\begin{enumerate}
+  \item Thumbnail analysis
+\end{enumerate} 
+
+\textbf{Удобство интерфейса:}
+Ясно как запустить анализ изображения, но не ясен результат анализа в целом (программа не выводит никакого конечного “диагноза” изображения).
+Инструмент также выводит некоторые результаты анализа в виде картинок без пояснений, которые для людей, не разбирающихся в методах анализа, не понятны
+  
+\textbf{Дополнительные характеристики:}
+\begin{enumerate}
+  \item Подсчитывает хэш-суммы для идентификации изображения.
+  \item Estimate JPEG Quality.
+  \item Можно проводить некоторые трансформации изображения.
+\end{enumerate}
+
+\textbf{Тестирование на изображениях с модификацией:}
+\begin{enumerate}
+\item \textbf{Оригинальный JPEG с камеры:}
+\url{http://fotoforensics.com/analysis.php?id=4c2765bd8b345ef980e3684cc2576a720eabd6c3.5785321}
+
+\item \textbf{Оригинальный снимок Raw с камеры, пересохраненный в JPEG компьютерной программой:}
+Программа вывела сообщение о том, что файл слишком большого размера, чтобы анализировать (размер файла 9,34 МБ).
+
+\item \textbf{Размытие:}
+Инструмент не выводит сообщений о модификации “размытие” и её области применения. Визуально определить эту модификацию по картинкам, приведенными инструментом, по-моему мнению, возможно.
+\url{http://fotoforensics.com/analysis.php?id=cdb64098f351cce5a8bce7d5e4d9c3ab1517681a.6843023}
+
+\item \textbf{Растяжение:}
+Инструмент не выводит сообщений о модификации “растяжение” и её области применения. Визуально определить эту модификацию по картинкам, приведенными инструментом, по-моему мнению, сложновато.
+\url{http://fotoforensics.com/analysis.php?id=df3b11995853ec206a714c2edb3660243e53c6be.7125650}
+
+\item \textbf{Изменение контраста:}
+Инструмент не выводит сообщений о модификации “изменение контраста” и её области применения. Визуально определить эту модификацию по картинкам, приведенными инструментом, по-моему мнению, сложновато.
+\url{http://fotoforensics.com/analysis.php?id=035bb71b508332395f9e3ef10f3a214110bd642a.8126211}
+
+\item \textbf{Клонирование объекта:}
+Инструмент не выводит сообщений о модификации “клонирование объекта” и её области применения. Визуально определить эту модификацию по картинкам, приведенными инструментом, по-моему мнению, возможно.
+\url{http://fotoforensics.com/analysis.php?id=888b530e129013fdaf0d248e72a8a85a4016c4d9.7219430}
+
+\item \textbf{Вставка другого изображение:}
+Инструмент не выводит сообщений о модификации “вставка другого изображения” и её области применения. Визуально определить эту модификацию по картинкам, приведенными инструментом, по-моему мнению, можно.
+\url{http://fotoforensics.com/analysis.php?id=93f87eb0ed63027e9f476621eb1b5507ca1d5b4a.7125426}
+
+\item \textbf{Применения фильтра "aппликация":}
+Визуально, по-моему мнению, можно только понять, что все изображение подверглось какой-то модифакации. 
+\url{http://fotoforensics.com/analysis.php?id=8456b554c0e16c56341960b83747e6a2525d4210.1408295}
+
+\item \textbf{Добавление блика:}
+Инструмент не выводит сообщений о модификации “добавление блика” и её области применения. Визуально определить эту модификацию по картинкам, приведенными инструментом, по-моему мнению, возможно.
+\url{http://fotoforensics.com/analysis.php?id=48a46a1ef58017565ed75fb58ec3c6249de4cf56.7092325}
+
+\end{enumerate}
+
+\newpage
+
+\section{Photo detective}
+
+\textbf{URL: } \url{http://metainventions.com/photodetective.html}
+
+\textbf{Авторы:}
+
+MetaInventions is a Chicago-based research and software development lab.
+
+\textbf{Что это:} Настольная программа
+
+\textbf{Поддерживаемые платформы:} Windows XP, Vista, 7, 8, 10 (32-bit and 64-bit)
+
+\textbf{Стоимость:} Платное
+
+\textbf{Поддерживаемый формат файлов:} JPEG, PNG
+
+\textbf{Используемые технологии и алгоритмы:}
+
+\begin{enumerate}
+  \item Principal Component Analysis to detect consistency among artifacts in the image
+  \item Wavelet decomposition analysis (focal length analysis)
+    
+  \item Edge detection routines to identify naturally blurred vs. artificially blurred areas (used to covered up tampering)
+  
+  \item Error Level Analysis (ELA)
+  
+  \item Local Min/Max pixel highlighting to determine if the pixels errors display a normal variation
+  \item Lighting gradient coloration analysis
+  \item Temperature Pseudocolor based on pixel intensity to identify odd or inconsistent coloration
+  \item Pixel color randomization to show pixels that have the same RGB value more easily.
+  \item Extreme color highlighting to show where the pixels are pure white and black and if the colors are being clipped by the camera
+    \item Thumbnail analysis
+    \item Metadata analysis
+	\item JPEG quantization tables analysis
+    \item Minimum-Medium-Maximum RGB value for each pixel to identify coloration inconsistencies 
+    \item Histogram of colors analysis
+	\item Color Filter Array Estimation analysis
+\end{enumerate} 
+
+\textbf{Дополнительные технологии и алгоритмы в платной версии:}
+\begin{enumerate}
+  \item Thumbnail analysis
+\end{enumerate} 
+
+\textbf{Удобство интерфейса:}
+Не имела возможности оценить. 
+
+\newpage
+
+\section{Forensically}
+
+\textbf{URL: } \url{ https://29a.ch/photo-forensics/#forensic-magnifier}
+
+\textbf{Авторы:}
+
+Jonas Wagner is a software engineer based in Zurich, Switzerland
+
+\textbf{Что это:} Сайт
+
+\textbf{Стоимость:} Бесплатное
+
+\textbf{Поддерживаемый формат файлов:} JPEG, PNG и мб какие-то еще
+
+\textbf{Используемые технологии и алгоритмы:}
+
+\begin{enumerate}
+  \item \href{http://fotoforensics.com/tutorial-meta.php}{Metadata analysis}
+  \item Principal component analysis (PCA)
+    
+  \item Error Level Analysis (ELA)
+  
+  \item Luminance gradient analysis
+  
+  \item Level sweep
+  
+  \item Clone detection analysis
+  
+  \item Thumbnail analysis
+\end{enumerate} 
+
+\textbf{Дополнительные технологии и алгоритмы в платной версии:}
+\begin{enumerate}
+  \item Thumbnail analysis
+\end{enumerate} 
+
+\textbf{Удобство интерфейса:}
+Ясно как запустить анализ изображения, но не ясен результат анализа в целом (программа не выводит никакого конечного “диагноза” изображения).
+Результат применения каждого инструмента анализа программы приходится анализировать визуально.
+
+\textbf{Тестирование на изображениях с модификацией:}
+\begin{enumerate}
+
+\item \textbf{Размытие:}
+Инструмент не выводит сообщений о модификации “размытие” и её области применения. Визуально определить эту модификацию по картинкам, приведенными инструментом, по-моему мнению, можно.
+
+\item \textbf{Растяжение:}
+Инструмент не выводит сообщений о модификации “растяжение” и её области применения. Визуально определить эту модификацию по картинкам, приведенными инструментом, по-моему мнению, возможно.
+
+\item \textbf{Изменение контраста:}
+Инструмент не выводит сообщений о модификации “изменение контраста” и её области применения. Визуально определить эту модификацию по картинкам, приведенными инструментом, по-моему мнению, сложновато.
+
+\item \textbf{Клонирование объекта:}
+Инструмент не выводит сообщений о модификации “клонирование объекта” и её области применения. Визуально определить эту модификацию по картинкам, приведенными инструментом, по-моему мнению, можно.
+
+\item \textbf{Вставка другого изображение:}
+Инструмент не выводит сообщений о модификации “вставка другого изображения” и её области применения. Визуально определить эту модификацию по картинкам, приведенными инструментом, по-моему мнению, можно.
+
+\item \textbf{Применения фильтра "aппликация":}
+Визуально, по-моему мнению, можно только понять, что все изображение подверглось какой-то модифакации. 
+
+\item \textbf{Добавление блика:}
+Инструмент не выводит сообщений о модификации “вставка другого изображения” и её области применения. Визуально определить эту модификацию по картинкам, приведенными инструментом, по-моему мнению, возможно.
+
+\end{enumerate}
+
+\newpage
+
+\section{Authenticate}
+
+\textbf{URL: } \url{https://ampedsoftware.com/authenticate}
+
+\textbf{Авторы:}
+
+Amped is a company specialized in developing software solutions for image and video processing for forensic and investigative applications.
+
+\textbf{Что это:} Настольная программа
+
+\textbf{Поддерживаемые платформы:} Windows XP, Vista, 7, 8 (32-bit and 64-bit) 
+
+\textbf{Стоимость:} Платное
+
+\textbf{Поддерживаемый формат файлов:} JPEG, TIFF, BMP, PNG and raw format from digital cameras.
+\textbf{Используемые технологии и алгоритмы:}
+
+\begin{enumerate}
+  \item \href{http://fotoforensics.com/tutorial-meta.php}{Metadata analysis}
+  \item JPEG quantization  tables analysis
+    
+  \item Thumbnail analysis
+  
+  \item Correlation Plot
+  
+  \item JPEG Ghosts
+  
+  \item Histogram of the image analysis
+  
+  \item Analysis of the color space usage of the image in the HSV and Lab coordinates that can help spot excessive color adjustment
+  
+  \item PRNU Identification
+  
+  \item Analysis of single image channels in different color spaces (RGB, YCbCr, YUV, HSV, HLS, XYZ, Lab, Luv, CMYK)
+  
+  \item Error level analysis (ELA)
+    
+  \item Display of the image DCT values that can help to spot tampered uniform areas of the image
+  
+  \item Identification of discontinuities in the correlation between pixels of the image
+  
+  \item Noise level analysis
+  
+  \item Luminance gradient analysis
+
+  \item Clone detection
+  
+  \item Similar Picture Search
+  
+\end{enumerate} 
+
+\textbf{Удобство интерфейса:}
+Судя по скринам, ясно как запустить анализ изображения. Насколько понятен результат анализа оценить не могу.
+  
+\textbf{Дополнительные характеристики:}
+\begin{enumerate}
+  \item Изъятие изображения из файлов формата PDF, PPT, DOC 
+\end{enumerate}
+
+\newpage
+\section{Описание некоторых методов анализа изображений}
+\begin{enumerate}
+  \item JPEG Quantization Tables Analysis:
+Цифровые фотоаппараты, мобильные девайсы и программы для редактирования
+изображений используют различные таблицы квантования при сохранении изображений в
+формат JPEG. Таблицы квантования могут быть извлечены и проанализированы. Если
+таблицы отличаются от тех, которые использует модель фотоаппарата, указанного в EXIF
+данных изображения, значит с изображением проводили какие-либо манипуляции.
+  \label{itm:DCAA}
+  \item \hypertarget{itm:DCAA}{\hyperlink{itm:DCAB}{Double Compression Artifacts Analysis:}} 
+При повторном сохранении файла формата JPEG происходит повторное сжатие, в
+результате этого коэффициент сжатия увеличивается. При большом коэффициенте
+сжатия появляются артефакты сжатия JPEG, которые представляют собой
+прямоугольные поля одного цвета, которые могут принимать довольно крупный размер в
+одноцветных областях изображения. Данный анализ исследует изображение на
+артефакты сжатия JPEG.
+\end{enumerate}

@@ -1,0 +1,73 @@
+
+\documentclass[14pt]{extreport} % , draft %% для быстрой печати pdf-черновика без картинок
+\usepackage[a4paper, mag=1000, 
+left=23mm, right=12mm, top=20mm, bottom=20mm]{geometry}    % Отступы страниц по ГОСТ Р 7.0.11-2011
+\usepackage[utf8]{inputenc}                                % Кодировка
+\usepackage[english,russian]{babel}                        % Переносы
+\usepackage{cmap}                                          % Функция поиска по кириллице
+\usepackage[pdftex,unicode,colorlinks,linkcolor=blue,citecolor=black!60!green,urlcolor=blue]{hyperref}
+% Гиперссылки, убрал все рамки.
+\usepackage[all]{hypcap}                                   % Гиперссылки на caption
+\usepackage{indentfirst}                                   % Отступ первого абзаца
+\usepackage{amsmath,amssymb,amsfonts}                      % Символы АМО
+\usepackage{cite}                                          % Цитирование
+\usepackage{graphicx}                                      % Графика
+\usepackage{ccaption}                                      % Подписи к рисункам
+\usepackage{color}                                         % Выделение текста цветом
+\usepackage{xcolor}                                        % Работа с цветом
+\usepackage{hhline}                                        % Для верстки линий в таблицах
+
+\usepackage{remreset}
+% переопределение встроенных команд
+\makeatletter
+  \@removefromreset{equation}{chapter}
+  \@removefromreset{figure}{chapter}
+  \@removefromreset{table}{chapter}
+  \renewcommand{\chapter}{
+  \cleardoublepage
+  \global\@topnum=0
+  \@afterindentfalse
+  \secdef\@chapter\@schapter}
+\makeatother 
+
+\usepackage{fancyhdr}               % пакет для установки колонтитулов
+\pagestyle{fancy}                   % смена стиля оформления страниц
+\fancyhf{}                          % очистка текущих значений
+\fancyhead[C]{\thepage}             % установка верхнего колонтитула
+\renewcommand{\headrulewidth}{0pt}  % убрать разделительную линию
+
+\renewcommand{\theequation}{\arabic{equation}}             % Сквозная нумерация формул
+\renewcommand{\thefigure}{\arabic{figure}}                 % Сквозная нумерация рисунков
+\renewcommand{\thetable}{\arabic{table}}                   % Сквозная нумерация таблиц
+
+\graphicspath{{figures/}}                                  % Путь до рисунков
+\captiondelim{~.~}                                         % Разделитель в подписях к рисункам и таблицам
+\renewcommand{\baselinestretch}{1.00} %1.31                % Интервал
+\sloppy                                                    % Запрет переполнений
+
+\author{Авдюшенко А.\,Ю.}
+
+\begin{document}
+  \renewcommand{\contentsname}{Оглавление}
+  \renewcommand{\chaptername}{Глава}
+  \renewcommand{\bibname}{Список литературы}
+  \renewcommand{\figurename}{Рисунок}
+  \renewcommand{\tablename}{Таблица}
+
+  \renewcommand{\leq}{\leqslant} % красивый знак <=
+  \renewcommand{\geq}{\geqslant} % красивый знак >=
+
+%\parindent=1.25cm                                          % Абзацный отступ равен пяти знакам
+%\renewcommand{\rmdefault}{ftm} % Переключение на шрифт документа Times New Roman (пакет pscyr)
+
+  % Диплом
+  % \input{title}
+  % \setcounter{page}{2}
+  % \tableofcontents
+  \input{Introduction}
+  % \input{chapter1}
+  % \input{summary}
+  % \input{references}
+  % \input{appendixA}
+
+\end{document}
