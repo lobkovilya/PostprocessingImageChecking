@@ -3,8 +3,8 @@ import exifread
 import io
 
 def show_diff_with_thumbnail(filename):
-    f = open(filename, 'rb')
-    tags = exifread.process_file(f)
+    image = open(filename, 'rb')
+    tags = exifread.process_file(image)
     thumbnail_is_found = False
     thumbnail_valid_area_is_found = False
 
@@ -35,4 +35,4 @@ def show_diff_with_thumbnail(filename):
     else:
         print("Can't find a thumbnail in metadata.")
 
-show_diff_with_thumbnail("3.jpg")
+show_diff_with_thumbnail("1.jpg")
