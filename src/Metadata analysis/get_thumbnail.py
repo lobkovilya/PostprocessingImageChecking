@@ -2,15 +2,16 @@ from PIL import Image
 import exifread
 import io
 
-def get_thumbnail(filename):
-    f = open(filename, 'rb')
-    tags = exifread.process_file(f)
+def get_thumbnail(image):
+    tags = exifread.process_file(image)
 
     for tag in tags.keys():
         if tag in 'JPEGThumbnail':
-            image = Image.open(io.BytesIO(tags[tag]))
-            image.save("thumbnail1.jpg")
-            image.show()
+            thumbnail = Image.open(io.BytesIO(tags[tag]))
+            thumbnail.save("thumbnail1.jpg")
+            thumbnail.show()
             break
 
-get_thumbnail("1.jpg")
+filename = "images\\1.jpg"
+image = open(filename, 'rb')
+get_thumbnail(image)

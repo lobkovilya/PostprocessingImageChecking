@@ -2,8 +2,7 @@ from PIL import Image, ImageChops
 import exifread
 import io
 
-def show_diff_with_thumbnail(filename):
-    image = open(filename, 'rb')
+def show_diff_with_thumbnail(image):
     tags = exifread.process_file(image)
     thumbnail_is_found = False
     thumbnail_valid_area_is_found = False
@@ -29,10 +28,27 @@ def show_diff_with_thumbnail(filename):
         diff_img = ImageChops.difference(thumb_img, original_img)
         diff_img.show()
 
+        i = 0
+        max = 0
+        while i < diff_img.size[0]:
+            j = 0
+            while j < diff_img.size[1]:
+                r, g, b = diff_img.getpixel((i, j))
+                sum = r + g + b
+                if sum > max:
+                    max = sum
+                j += 1
+            i += 1
+
+        print("The maximum sum of the differences of values of 3 channels is equal to %d" % max)
+
         diff_img.save("DiffBetweenThumbnails.bmp")
         thumb_img.save("ThumbnailFromMetadata.bmp")
         original_img.save("ThumbnailThatWeMade.bmp")
     else:
         print("Can't find a thumbnail in metadata.")
 
-show_diff_with_thumbnail("1.jpg")
+
+filename = "images\insertion.jpg"
+image = open(filename, 'rb')
+show_diff_with_thumbnail(image)
