@@ -551,3 +551,4 @@ class ExifHeader:
                 cleaned.append(line)
         self.tags['Image ApplicationNotes'] = IfdTag('\n'.join(cleaned), None,
                                                      1, None, None, None)
+        
