@@ -1,8 +1,8 @@
-import cloudinary
-import cloudinary.uploader
-import cloudinary.api
-import os
 import os.path
+
+import cloudinary
+import cloudinary.api
+import cloudinary.uploader
 
 from load_save_script import *
 
@@ -36,3 +36,4 @@ from_file = load_from_file(cats)
 
 for f in from_file:
     f.get_image().show()
+
