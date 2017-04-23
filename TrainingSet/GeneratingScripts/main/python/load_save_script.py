@@ -63,9 +63,13 @@ def save_to_file(file, data):
 
 
 def load_from_file(file):
-    with open(file, "rb") as f:
+    with open(file, "r") as f:
         return json.load(f, cls=TrainingSetDecoder)
 
+
+def append_to_file(file, data):
+    with open(file, "a") as f:
+        json.dump(data, f, cls=TrainingSetEncoder, indent=3)
 
 # images = [FilteredImage("http://www.pet4me.ru/sites/default/files/imagecache/1000x667/5748_original.jpg",
 #                         [Filters.GAUSSIAN_BLUR, Filters.NEGATIVE]),
