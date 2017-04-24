@@ -71,16 +71,4 @@ def append_to_file(file, data):
     with open(file, "a") as f:
         json.dump(data, f, cls=TrainingSetEncoder, indent=3)
 
-# images = [FilteredImage("http://www.pet4me.ru/sites/default/files/imagecache/1000x667/5748_original.jpg",
-#                         [Filters.GAUSSIAN_BLUR, Filters.NEGATIVE]),
-#           FilteredImage("http://gotonight.ru/ih800/catalog/places2/708_kotiki11.png",
-#                         [Filters.NEGATIVE, Filters.GRAYSCALE]),
-#           FilteredImage("http://cdn.fishki.net/upload/post/201406/23/1279678/xYjUKHJssWQ.jpg", [Filters.GAUSSIAN_BLUR])]
-#
-# file_name = "training_set"
-# # save_to_file(file_name, images)
-# images_from_file = load_from_file(file_name)
-#
-# for i in images_from_file:
-#     # print(i)
-#     i.get_image().show(i.URL)
+

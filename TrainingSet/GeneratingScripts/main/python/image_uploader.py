@@ -25,21 +25,4 @@ class ImageUploader:
         return url
 
 
-# uploader = ImageUploader()
-# folder = "./Images"
-# filtered_images = []
-#
-# for f in os.listdir(folder):
-#     fname = folder + "/" + f
-#     if os.path.isfile(fname):
-#         print("Try to upload " + fname)
-#         url = uploader.upload_image(fname)
-#         filtered_images.append(FilteredImage(url, []))
-#
-# cats = "cats"
-# save_to_file(cats, filtered_images)
-# from_file = load_from_file(cats)
-#
-# for f in from_file:
-#     f.get_image().show()
 
