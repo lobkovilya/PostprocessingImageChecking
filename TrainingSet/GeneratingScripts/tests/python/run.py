@@ -15,7 +15,7 @@ class FilterApplierTest(unittest.TestCase):
         modified_urls_file = "../resources/urls/modified_fishes_urls.txt"
         applier = FilterApplier()
         image_descriptors = load_from_file(urls_file)
-        for desc in itertools.islice(image_descriptors, 0, 1):
+        for desc in itertools.islice(image_descriptors, 0, 65):
             image = desc.get_image()
             modified_image_descriptors = upload_images_to_cloud(applier.apply(image))
             append_to_file(modified_urls_file, modified_image_descriptors)

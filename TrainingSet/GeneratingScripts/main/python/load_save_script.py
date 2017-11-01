@@ -1,4 +1,5 @@
 import json
+import fileinput
 from io import BytesIO
 from json import JSONEncoder, JSONDecoder
 
@@ -70,5 +71,7 @@ def load_from_file(file):
 def append_to_file(file, data):
     with open(file, "a") as f:
         json.dump(data, f, cls=TrainingSetEncoder, indent=3)
-
+    with fileinput.FileInput(file, inplace=True, backup='.bak') as file:
+        for line in file:
+            print(line.replace('][', ','), end='')
 
