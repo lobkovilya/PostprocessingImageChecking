@@ -30,7 +30,8 @@ class FilterMask:
             self.filters[filter] = True
 
     def get_mask(self):
-        return [v for v in self.filters.values()]
+        return [self.filters[f] for f in Filters]
+        # return [v for v in self.filters.values()]
 
 
 class TrainingSetEncoder(JSONEncoder):
