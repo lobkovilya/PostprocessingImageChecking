@@ -1,0 +1,35 @@
+[
+   {
+      "URL": "url1",
+      "Filters": [
+         {
+            "FilterName": "BLUR"
+         }
+      ]
+   },
+   {
+      "URL": "url2",
+      "Filters": [
+         {
+            "FilterName": "BLUR"
+         },
+         {
+            "FilterName": "DETAIL"
+         }
+      ]
+   },
+   {
+      "URL": "url3",
+      "Filters": [
+         {
+            "FilterName": "BLUR"
+         },
+         {
+            "FilterName": "DETAIL"
+         },
+         {
+            "FilterName": "SMOOTH"
+         }
+      ]
+   }
+]

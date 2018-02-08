@@ -9,9 +9,9 @@ class LoadSaveTest(unittest.TestCase):
     def test_1(self):
         urls = ["url1", "url2", "url3"]
         applied_filters = [
-            [Filters.NEGATIVE],
-            [Filters.NEGATIVE, Filters.GRAYSCALE],
-            [Filters.NEGATIVE, Filters.GRAYSCALE, Filters.GAUSSIAN_BLUR]
+            [Filters.BLUR],
+            [Filters.BLUR, Filters.DETAIL],
+            [Filters.BLUR, Filters.DETAIL, Filters.SMOOTH]
         ]
         training_set = [FilteredImage(urls[i], applied_filters[i]) for i in range(len(urls))]
 
