@@ -1,11 +1,14 @@
-from PIL import ImageFilter
+from PIL import ImageFilter, Image
 from filters_names import Filters
+from TrainingSet.GeneratingScripts.main.python.libs.instagram_filters.filters.lomo import Lomo
 import itertools
+from os import path
 
+IMAGE_SIZE = 300, 300
 
 class FilterApplier:
-    filters = [ImageFilter.GaussianBlur(3)]
-    # filters = [ImageFilter.BLUR]
+    # filters = [ImageFilter.GaussianBlur(3)]
+    filters = [ImageFilter.SMOOTH_MORE]
     # filters = (ImageFilter.BLUR, ImageFilter.DETAIL, ImageFilter.SMOOTH, ImageFilter.SHARPEN)
 
     def apply(self, image):
@@ -22,3 +25,9 @@ class FilterApplier:
             modified_image = image.filter(filter_to_apply)
             yield (modified_image, [Filters.from_string(filter_to_apply.name.upper())])
         yield (image, [Filters.NO_FILTER])
+
+    def apply_instagram_filter(self, image_path):
+        modified_image = Lomo(image_path, './tmp.jpg')
+        modified_image.apply()
+        yield (modified_image.image().resize(IMAGE_SIZE), [Filters.LOMO])
+        yield (Image.open(image_path).resize(IMAGE_SIZE), [Filters.NO_FILTER])

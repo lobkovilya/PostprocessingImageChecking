@@ -1,11 +1,13 @@
 import json
 import uuid
+import requests
+import os
+import numpy as np
+
+from pathlib import Path
 from io import BytesIO
 from json import JSONEncoder, JSONDecoder
-
-import requests
 from PIL import Image
-
 from filters_names import *
 
 
@@ -74,6 +76,20 @@ def load_from_file(file):
 def append_to_file(file, data):
     with open(file, "a") as f:
         json.dump(data, f, cls=TrainingSetEncoder, indent=3)
+
+
+def load_image(filtered_image, cache_directory, image_size):
+    file_name = filtered_image.id + '_img.jpeg'
+    file_path = os.path.join(cache_directory, file_name)
+    file = Path(file_path)
+
+    if not file.exists():
+        img = filtered_image.get_image()
+        img.save(file_path)
+
+    img = Image.open(file)
+    img = img.resize(image_size)
+    return np.asarray(img, dtype="int32")
 
 
 def to_csv(file, csv_file):
